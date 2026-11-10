@@ -1,120 +1,31 @@
+📚 Meus Estudos de SQL
 
-# README — Introdução ao SQL usando o Banco Northwind
+Este repositório foi criado para organizar meus estudos e minha evolução no aprendizado de SQL (Structured Query Language).
 
-Este documento explica **conceitos fundamentais de SQL** utilizando o banco de exemplo **Northwind**, que é distribuído pela Microsoft.
+Aqui vou reunir anotações, exemplos de consultas, explicações de comandos e conhecimentos adquiridos durante minha jornada de aprendizado sobre bancos de dados.
 
----
+O objetivo é ter um espaço próprio para registrar o que estou aprendendo, praticar consultas e construir uma base de conhecimento que possa ser utilizada como material de consulta no futuro.
 
-## 📘 1. O que é SQL?
+🎯 Objetivos dos estudos
+Aprender e compreender os principais comandos SQL.
+Entender como realizar consultas em bancos de dados.
+Aprender a filtrar, ordenar e agrupar informações.
+Trabalhar com funções de contagem e cálculos.
+Compreender relacionamentos entre tabelas utilizando JOIN.
+Desenvolver consultas simples e avançadas.
+Praticar e aprimorar minha lógica de consulta de dados.
+📖 Organização do aprendizado
 
-**SQL (Structured Query Language)** é a linguagem usada para consultar e manipular dados em bancos relacionais.
+Os conteúdos serão organizados de acordo com os assuntos estudados, começando pelos conceitos básicos e avançando gradualmente para consultas mais complexas.
 
-Com SQL você pode:
+Cada anotação terá explicações e exemplos práticos para facilitar a compreensão e ajudar na fixação do conteúdo.
 
-- Buscar dados (`SELECT`)
-- Filtrar resultados (`WHERE`)
-- Ordenar (`ORDER BY`)
-- Relacionar tabelas (`JOIN`)
-- Inserir dados (`INSERT`)
-- Atualizar (`UPDATE`)
-- Excluir (`DELETE`)
+💻 Propósito deste repositório
 
-Este README foca em **consulta de dados** usando SELECT.
+Mais do que reunir comandos, este repositório representa meu processo de aprendizado e evolução em SQL.
 
----
+A intenção é manter meus estudos documentados, acompanhar meu progresso e construir uma referência pessoal que possa consultar sempre que necessário.
 
-## 🛠️ 2. Estrutura das Tabelas no Northwind
+Um passo de cada vez, uma consulta de cada vez. 🚀
 
-Algumas tabelas importantes do banco Northwind:
-
-| Tabela | O que contém |
-|--------|--------------|
-| Customers | Clientes |
-| Orders | Pedidos |
-| Order Details | Itens do pedido |
-| Products | Produtos |
-| Suppliers | Fornecedores |
-| Employees | Funcionários |
-
----
-
-## 🔎 3. SELECT — Consultando Dados
-
-### ✔ Exemplo 1 — Selecionar todos os clientes
-```sql
-SELECT * FROM Customers;
-```
-**Resultado:** lista todos os clientes.
-
-### ✔ Exemplo 2 — Selecionar colunas específicas
-```sql
-SELECT CompanyName, Country
-FROM Customers;
-```
-**Resultado:** mostra apenas empresa e país.
-
-### ✔ Exemplo 3 — Filtrar com WHERE
-```sql
-SELECT *
-FROM Customers
-WHERE Country = 'Brazil';
-```
-**Resultado:** mostra apenas clientes brasileiros.
-
----
-
-## 🔗 4. INNER JOIN — Relacionando Tabelas
-
-### ✔ Exemplo 4 — Pedidos + Clientes
-```sql
-SELECT 
-    o.OrderID,
-    c.CompanyName,
-    o.OrderDate
-FROM Orders o
-INNER JOIN Customers c ON o.CustomerID = c.CustomerID;
-```
-**Resultado:** une o cliente ao pedido.
-
-### ✔ Exemplo 5 — Itens de pedido + Produtos
-```sql
-SELECT 
-    od.OrderID,
-    p.ProductName,
-    od.Quantity,
-    od.UnitPrice
-FROM [Order Details] od
-INNER JOIN Products p ON od.ProductID = p.ProductID;
-```
-**Resultado:** mostra os itens de cada pedido.
-
----
-
-## 🗂️ 5. ORDER BY — Ordenando Dados
-
-### ✔ Exemplo — Produtos mais caros
-```sql
-SELECT ProductName, UnitPrice
-FROM Products
-ORDER BY UnitPrice DESC;
-```
-
----
-
-## 🧮 6. GROUP BY — Agrupando Dados
-
-### ✔ Exemplo — Total vendido por produto
-```sql
-SELECT 
-    ProductID,
-    SUM(Quantity) AS TotalVendido
-FROM [Order Details]
-GROUP BY ProductID;
-```
-
----
-
-## 📚 Conclusão
-
-Este README serve como introdução prática ao SQL usando o banco Northwind. Use estes exemplos como base para criar consultas mais complexas.
-
+Repositório pessoal de estudos — SQL.
